@@ -1,10 +1,10 @@
 /*
  * Name: Hyunjun Kim
  * Date: Oct 26, 2017
- * File: Board.java
+ * File: TicTacToe.java
  * Sources of Help:
  *
- *
+ * the fact that I like the 
  */
 
 import objectdraw.*;
@@ -54,14 +54,19 @@ public class TicTacToeGUI extends WindowController {
      */
     public void begin() {
         /* Show lines */
-        VertLine1 = new Line(ONE_THIRD_WIDTH, 0, ONE_THIRD_WIDTH, canvasHeight, canvas);
-        VertLine2 = new Line(TWO_THIRD_WIDTH, 0, TWO_THIRD_WIDTH, canvasHeight, canvas);
-        HoriLine1 = new Line(0, ONE_THIRD_HEIGHT, canvasWidth, ONE_THIRD_HEIGHT, canvas);
-        HoriLine2 = new Line(0, TWO_THIRD_HEIGHT, canvasWidth, TWO_THIRD_HEIGHT, canvas);
+        VertLine1 = new Line(ONE_THIRD_WIDTH, 0, ONE_THIRD_WIDTH, 
+            canvasHeight, canvas);
+        VertLine2 = new Line(TWO_THIRD_WIDTH, 0, TWO_THIRD_WIDTH, 
+            canvasHeight, canvas);
+        HoriLine1 = new Line(0, ONE_THIRD_HEIGHT, canvasWidth, 
+            ONE_THIRD_HEIGHT, canvas);
+        HoriLine2 = new Line(0, TWO_THIRD_HEIGHT, canvasWidth, 
+            TWO_THIRD_HEIGHT, canvas);
 
-        QuestionBox = new FilledRect(ONE_THIRD_WIDTH/2, ONE_THIRD_HEIGHT/2, TWO_THIRD_WIDTH, TWO_THIRD_HEIGHT, canvas);
-        Question = new Text("Choose", ONE_THIRD_WIDTH/2 + 10, ONE_THIRD_HEIGHT/2, canvas);
-        Question.setBold();
+        QuestionBox = new FilledRect(ONE_THIRD_WIDTH/2, ONE_THIRD_HEIGHT/2, 
+                                     TWO_THIRD_WIDTH, TWO_THIRD_HEIGHT, canvas);
+        Question = new Text("Choose", ONE_THIRD_WIDTH/2 + 10, 
+            ONE_THIRD_HEIGHT/2, canvas);
         Question.setFontSize(100);
         Question.setColor(Color.WHITE);
     }
@@ -80,7 +85,8 @@ public class TicTacToeGUI extends WindowController {
                         25 + 200 * (loc % 3), 175 + 200 * (loc / 3), canvas);
                 turn = 'O';
             } else if (turn == 'O' && loc != -1) {
-                new FramedOval(25 + 200 * (loc % 3), 25 + 200 * (loc / 3), DIAMETER, DIAMETER, canvas);
+                new FramedOval(25 + 200 * (loc % 3), 25 + 200 * (loc / 3),
+                    DIAMETER, DIAMETER, canvas);
                 turn = 'X';
             }
             Board.GameEnd(canvas);
@@ -105,51 +111,59 @@ public class TicTacToeGUI extends WindowController {
                 loc = 0;
             } else
                 loc = -1;
-        } else if(x > 0 && x < ONE_THIRD_WIDTH && y > ONE_THIRD_HEIGHT && y < TWO_THIRD_HEIGHT) {
+        } else if(x > 0 && x < ONE_THIRD_WIDTH && y > ONE_THIRD_HEIGHT && 
+            y < TWO_THIRD_HEIGHT) {
             if(Board[1][0] == null) {
                 Board[1][0] = turn;
                 loc = 3;
             } else
                 loc = -1;
-        } else if(x > 0 && x < ONE_THIRD_WIDTH && y > TWO_THIRD_HEIGHT && y < canvasHeight) {
+        } else if(x > 0 && x < ONE_THIRD_WIDTH && y > TWO_THIRD_HEIGHT && 
+            y < canvasHeight) {
             if(Board[2][0] == null) {
                 Board[2][0] = turn;
                 loc = 6;
             } else
                 loc = -1;
-        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && y > 0 && y < ONE_THIRD_HEIGHT) {
+        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && y > 0 && 
+            y < ONE_THIRD_HEIGHT) {
             if(Board[0][1] == null) {
                 Board[0][1] = turn;
                 loc = 1;
             } else
                 loc = -1;
-        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && y > ONE_THIRD_HEIGHT && y < TWO_THIRD_HEIGHT) {
+        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && 
+            y > ONE_THIRD_HEIGHT && y < TWO_THIRD_HEIGHT) {
             if(Board[1][1] == null) {
                 Board[1][1] = turn;
                 loc = 4;
             } else {
                 loc = -1;
             }
-        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && y > TWO_THIRD_HEIGHT && y < canvasHeight) {
+        } else if(x > ONE_THIRD_WIDTH && x < TWO_THIRD_WIDTH && 
+            y > TWO_THIRD_HEIGHT && y < canvasHeight) {
             if(Board[2][1] == null) {
                 Board[2][1] = turn;
                 loc = 7;
             } else
                 loc = -1;
-        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth && y > 0 && y < ONE_THIRD_HEIGHT) {
+        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth && y > 0 && 
+            y < ONE_THIRD_HEIGHT) {
             if(Board[0][2] == null) {
                 Board[0][2] = turn;
                 loc = 2;
             } else
                 loc = -1;
-        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth && y > ONE_THIRD_HEIGHT && y < TWO_THIRD_HEIGHT) {
+        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth && 
+            y > ONE_THIRD_HEIGHT && y < TWO_THIRD_HEIGHT) {
             if(Board[1][2] == null) {
                 Board[1][2] = turn;
                 loc = 5;
             } else {
                 loc = -1;
             }
-        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth && y > TWO_THIRD_HEIGHT && y < canvasHeight){
+        } else if(x > TWO_THIRD_WIDTH && x < canvasWidth &&
+            y > TWO_THIRD_HEIGHT && y < canvasHeight){
             if(Board[2][2] == null) {
                 Board[2][2] = turn;
                 loc = 8;
