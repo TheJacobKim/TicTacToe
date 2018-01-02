@@ -25,7 +25,7 @@ public class Board {
         /* Initialize 2D array */
         for (int i = 0; i < Board.length; i++) {
             for (int j = 0; j < Board[i].length; j++) {
-                Board[i][j] = null;
+                Board[i][j] = ' ';
             }
         }
     }
@@ -38,6 +38,10 @@ public class Board {
         return Board;
     }
 
+
+    public static char getBoard(int row, int col) {
+        return Board[row][col];
+    }
     /**
      * Accepts x & y coordinates and turn to update the board
      * @param x location
@@ -55,12 +59,12 @@ public class Board {
     public static boolean GameEnd(DrawingCanvas canvas) {
         // Check win condition for columns
         for(int i = 0; i < Board.length; i++) {
-            if(Board[i][0] != null && Board[i][0] == Board[i][1] && Board[i][1] == Board[i][2]) {
+            if(Board[i][0] != ' ' && Board[i][0] == Board[i][1] && Board[i][1] == Board[i][2]) {
                 System.out.println(Board[i][0] + " Won!");
                 TicTacToeGUI.displayWinMessage(Board[i][0], canvas);
                 return true;
             }
-            if(Board[0][i] != null && Board[0][i] == Board[1][i] && Board[1][i] == Board[2][i]) {
+            if(Board[0][i] != ' ' && Board[0][i] == Board[1][i] && Board[1][i] == Board[2][i]) {
                 System.out.println(Board[0][i] + " Won!");
                 TicTacToeGUI.displayWinMessage(Board[0][i], canvas);
                 return true;
@@ -68,12 +72,12 @@ public class Board {
         }
 
         // Check win conditions for diagonals
-        if(Board[0][0] != null && Board[0][0] == Board[1][1] && Board[1][1] == Board[2][2]) {
+        if(Board[0][0] != ' ' && Board[0][0] == Board[1][1] && Board[1][1] == Board[2][2]) {
             System.out.println(Board[0][0] + " Won!");
             TicTacToeGUI.displayWinMessage(Board[0][0], canvas);
             return true;
         }
-        if(Board[0][2] != null && Board[0][2] == Board[1][1] && Board[1][1] == Board[2][0]) {
+        if(Board[0][2] != ' ' && Board[0][2] == Board[1][1] && Board[1][1] == Board[2][0]) {
             System.out.println(Board[0][2] + " Won!");
             TicTacToeGUI.displayWinMessage(Board[0][2], canvas);
             return true;

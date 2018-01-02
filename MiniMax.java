@@ -10,18 +10,25 @@
 ///**
 // * MiniMax algorithm
 // */
-//public class MiniMax {
-//    public static Board MiniMax(Board origBoard) {
-//        Character[][] board = origBoard.getBoard();
-//        for(int i = 0; i < board.length; i++) {
-//            for (int j = 0; j < board[i].length; j++) {
-//                if (board[i][j] == null) {
-//
-//                } else (board[i][i])
+//public class MiniMax extends AIPlayer{
+//    public static int[] MiniMax(Board board) {
+//        for(Character[] i : board.getBoard()) {
+//            for(char j : i) {
+//                if(i == null) {
+//                    Board.getBo
+//                }
 //            }
 //        }
-//        return null; //TODO
 //    }
+//
+//    public static int[] getScore(char currentPly, ){
+//
+//    }
+//
+//    public static boolean gameEnd() {
+//
+//    }
+//
 //
 //    public static int EvalScore(Board origBoard) {
 //        Character[][] Board = origBoard.getBoard();
